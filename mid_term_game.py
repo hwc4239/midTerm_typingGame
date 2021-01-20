@@ -66,8 +66,9 @@ user.user_info()                              #### user 입장 알림 메서드 
 start = time.time()                          # Start Time
 
 while n <= 5:                                # 5회 반복
+    i = random.randint(1,3)                  # 출력할 단어 개수 (1~3)
     random.shuffle(words)                    # List shuffle!
-    q = random.choice(words)                 # List -> words random extract!
+    q = ' '.join(random.sample(words, i))    # 리스트의 단어 중 랜덤개수만큼 선택
 
     print("{}번 문제>>".format(n),q)         # 문제 출력
     
