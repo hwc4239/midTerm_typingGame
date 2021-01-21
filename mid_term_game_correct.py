@@ -65,25 +65,10 @@ n = 1                                        # 게임 시도 횟수
 cor_cnt = 0                                  # 정답 개수
 life = 5                                    #life 제한
 
-# try:
-#     word_f=open('./resource/word.txt', 'r') # 문제 txt 파일 로드
-# except IOError:
-#     print("파일이 없습니다!! 게임을 진행할 수 없습니다!!")
-# else:
-#         for c in word_f:
-#             words.append(c.strip())
-#         word_f.close()
-
-
-# if words==[]:                                #파일이 없을때 프로그램 종료
-#     sys.exit()
-#print(words)                                 # 단어 리스트 확인
-
 user_name=input("Ready? Input Your name>> ")             # Enter Game Start! 
 user=GameStart(user_name)                     #### GameStart의 user객체 생성
 user.user_info()                              #### user 입장 알림 메서드 호출
 user.choose_type()                          # 게임 선택
-
 
 
 if words==[]:                           #파일이 없을때 프로그램 종료
@@ -118,12 +103,7 @@ while life > 0:                                # 5회 반복
         )
         ############
         print(">>Pass!")
-        # time_end = time.time()
- 
-        
-        
         print("남은 기회:"+str(life),end=' ')     #남은 횟수 보여주기
-        # print("타자 속도:%.2f" % speed,end=' ')     # 타자속도 
         cor_cnt += 1                         # 정답 개수 카운트
 
     else:
@@ -136,7 +116,6 @@ while life > 0:                                # 5회 반복
         life-=1
         print(">>Wrong!")
         print("남은 기회:"+str(life),end=' ')
-        #print("타자 속도:%.2f" %speed,end=' ')
         
 
     if life==0:                             #life==0이면 게임오버
@@ -161,10 +140,7 @@ while life > 0:                                # 5회 반복
     
 end = time.time()                            # End Time
 et = end - start                             # 총 게임 시간
-
 et = format(et, ".3f")                       # 소수 셋째 자리 출력(시간)
-
-#speed = float(cor_cnt/end)*60               #속도 
 print()
 
 ######### 결과 기록 DB 삽입
